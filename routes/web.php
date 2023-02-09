@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\OrderController;
 use App\Models\Product;
 use Illuminate\Support\Facades\Route;
 
@@ -51,8 +53,12 @@ Route::delete('/products/delete/{id}', [ProductController::class, 'destroy'])
     ->name('products.destroy');
 
 
+// Product
+// Category
 
 
+// crud
+// relations
 
 
 
@@ -68,5 +74,13 @@ Route::put('/products/update/{id}', [ProductController::class, 'update'])
 Route::post('/products/store', [ProductController::class, 'store'])
     ->name('products.store');
 
+
+
+Route::get('/category', [CategoryController::class, 'index'])->name('category.index');
+Route::get('/category/show/{id}', [CategoryController::class, 'show'])->name('category.show');
+
+Route::get('/order', [OrderController::class, 'index'])->name('order.index');
+
+Route::get('/order/{id}', [OrderController::class, 'show'])->name('order.show');
 // mvc
 // route
